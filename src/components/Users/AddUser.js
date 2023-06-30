@@ -3,6 +3,7 @@ import Card from '../UI/Card';
 import classes from './AddUse.module.css';
 import Button from '../UI/Button';
 import ErrorModal from '../UI/ErrorModule';
+import Wrapper from '../Helpers/Wrapper';
 
 
 const AddUser = (props) => {
@@ -48,7 +49,7 @@ const AddUser = (props) => {
       };
 
     return (
-        <div>
+        <Wrapper>
         {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler} />}
         <Card className={classes.input}>
     <form onSubmit={AddUserHandler}>
@@ -59,7 +60,7 @@ const AddUser = (props) => {
         <Button type="submit">Add User</Button>
     </form>
     </Card>
-    </div>
+    </Wrapper>
     );
 
 };
